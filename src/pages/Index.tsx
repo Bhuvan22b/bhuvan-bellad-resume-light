@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import AboutSection from '../components/sections/AboutSection';
 import EducationSection from '../components/sections/EducationSection';
@@ -9,34 +9,37 @@ import AchievementsSection from '../components/sections/AchievementsSection';
 import ContactSection from '../components/sections/ContactSection';
 
 const Index = () => {
-  const [activeSection, setActiveSection] = useState('about');
-
-  const renderSection = () => {
-    switch (activeSection) {
-      case 'about':
-        return <AboutSection />;
-      case 'education':
-        return <EducationSection />;
-      case 'skills':
-        return <SkillsSection />;
-      case 'projects':
-        return <ProjectsSection />;
-      case 'achievements':
-        return <AchievementsSection />;
-      case 'contact':
-        return <ContactSection />;
-      default:
-        return <AboutSection />;
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navigation activeSection={activeSection} setActiveSection={setActiveSection} />
+      <Navigation onSectionClick={scrollToSection} />
       
       <main className="ml-64 p-8">
-        <div className="max-w-4xl mx-auto">
-          {renderSection()}
+        <div className="max-w-4xl mx-auto space-y-8">
+          <div id="about">
+            <AboutSection />
+          </div>
+          <div id="education">
+            <EducationSection />
+          </div>
+          <div id="skills">
+            <SkillsSection />
+          </div>
+          <div id="projects">
+            <ProjectsSection />
+          </div>
+          <div id="achievements">
+            <AchievementsSection />
+          </div>
+          <div id="contact">
+            <ContactSection />
+          </div>
         </div>
       </main>
     </div>
