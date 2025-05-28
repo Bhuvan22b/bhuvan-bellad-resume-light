@@ -16,8 +16,8 @@ const AchievementsSection = () => {
       description: "Qualified to the semi-finals of a prestigious hackathon hosted by IIT Kharagpur. Worked on an AI/ML classification problem project.",
       icon: Award,
       type: "Hackathon Achievement",
-      gradient: "from-purple-500 to-pink-500",
-      bgGradient: "from-purple-50 to-pink-50"
+      gradient: "from-red-500 to-pink-500",
+      bgGradient: "from-red-50 to-pink-50"
     }
   ];
 
@@ -25,7 +25,7 @@ const AchievementsSection = () => {
     <section className="relative">
       <div className="bg-white/70 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-200/50 p-8 mb-6 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-40 h-40 bg-gradient-to-br from-yellow-400/20 to-orange-500/20 rounded-full blur-xl"></div>
-        <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tr from-purple-400/20 to-pink-500/20 rounded-full blur-xl"></div>
+        <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tr from-red-400/20 to-pink-500/20 rounded-full blur-xl"></div>
         
         <div className="relative z-10">
           <div className="flex items-center gap-4 mb-8">

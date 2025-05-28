@@ -25,7 +25,7 @@ const ProjectsSection = () => {
         "Professional presentation"
       ],
       icon: Code,
-      gradient: "from-purple-500 to-pink-500"
+      gradient: "from-red-500 to-pink-500"
     }
   ];
 
@@ -33,7 +33,7 @@ const ProjectsSection = () => {
     <section className="relative">
       <div className="bg-white/70 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-200/50 p-8 mb-6 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-36 h-36 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-full blur-xl"></div>
-        <div className="absolute bottom-0 left-0 w-28 h-28 bg-gradient-to-tr from-purple-400/20 to-pink-500/20 rounded-full blur-xl"></div>
+        <div className="absolute bottom-0 left-0 w-28 h-28 bg-gradient-to-tr from-red-400/20 to-pink-500/20 rounded-full blur-xl"></div>
         
         <div className="relative z-10">
           <div className="flex items-center gap-4 mb-8">
