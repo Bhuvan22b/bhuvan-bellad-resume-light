@@ -17,27 +17,34 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-500"></div>
+      </div>
+      
       <Navigation onSectionClick={scrollToSection} />
       
-      <main className="ml-64 p-8">
-        <div className="max-w-4xl mx-auto space-y-8">
-          <div id="about">
+      <main className="ml-64 relative z-10">
+        <div className="max-w-6xl mx-auto p-8 space-y-12">
+          <div id="about" className="scroll-mt-8">
             <AboutSection />
           </div>
-          <div id="education">
+          <div id="education" className="scroll-mt-8">
             <EducationSection />
           </div>
-          <div id="skills">
+          <div id="skills" className="scroll-mt-8">
             <SkillsSection />
           </div>
-          <div id="projects">
+          <div id="projects" className="scroll-mt-8">
             <ProjectsSection />
           </div>
-          <div id="achievements">
+          <div id="achievements" className="scroll-mt-8">
             <AchievementsSection />
           </div>
-          <div id="contact">
+          <div id="contact" className="scroll-mt-8">
             <ContactSection />
           </div>
         </div>
