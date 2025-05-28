@@ -1,12 +1,44 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useState } from 'react';
+import Navigation from '../components/Navigation';
+import AboutSection from '../components/sections/AboutSection';
+import EducationSection from '../components/sections/EducationSection';
+import SkillsSection from '../components/sections/SkillsSection';
+import ProjectsSection from '../components/sections/ProjectsSection';
+import AchievementsSection from '../components/sections/AchievementsSection';
+import ContactSection from '../components/sections/ContactSection';
 
 const Index = () => {
+  const [activeSection, setActiveSection] = useState('about');
+
+  const renderSection = () => {
+    switch (activeSection) {
+      case 'about':
+        return <AboutSection />;
+      case 'education':
+        return <EducationSection />;
+      case 'skills':
+        return <SkillsSection />;
+      case 'projects':
+        return <ProjectsSection />;
+      case 'achievements':
+        return <AchievementsSection />;
+      case 'contact':
+        return <ContactSection />;
+      default:
+        return <AboutSection />;
+    }
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-gray-50">
+      <Navigation activeSection={activeSection} setActiveSection={setActiveSection} />
+      
+      <main className="ml-64 p-8">
+        <div className="max-w-4xl mx-auto">
+          {renderSection()}
+        </div>
+      </main>
     </div>
   );
 };
